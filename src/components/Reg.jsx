@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Reg({ setUser }) {
+export default function reg({ setUser }) {
   const [error, setError] = useState(null);
   const [inputs, setInputs] = useState({
     username: '',
@@ -17,9 +17,9 @@ export default function Reg({ setUser }) {
       },
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     });
-    const data = await response.json();
+    // const data = await response.json();
     if (response.ok) {
-      setUser(data);
+      // setUser(data);
       window.location.href = '/';
     } else {
       // console.log(data.message);
@@ -31,12 +31,12 @@ export default function Reg({ setUser }) {
 
   return (
     <div className="container" style={{ width: 400, margin: 'auto', color: 'white' }}>
-      <h1 className="is-size-2">Регистрация</h1>
+      <h1 className="is-size-2">Регистрация пользователя</h1>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={submitHandler}>
         <div className="field">
           <label className="label">
-            Ваше имя
+            Введите имя пользователя
           </label>
           <div className="control has-icons-left has-icons-right">
             <input className="input is-medium" value={inputs.username} name="username" onChange={changeHandler} type="text" placeholder="Иван Иванов" />
@@ -47,7 +47,7 @@ export default function Reg({ setUser }) {
         </div>
         <div className="field">
           <label className="label">
-            Ваша почта
+            Введите почту пользователя
           </label>
           <div className="control has-icons-left has-icons-right">
             <input className="input is-medium" value={inputs.email} name="email" onChange={changeHandler} type="text" placeholder="ivanov@mail.ru" />

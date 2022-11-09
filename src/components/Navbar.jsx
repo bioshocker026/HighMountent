@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Navbar({ user, setUser }) {
-    console.log(user);
+  console.log(user);
   const logOut = async (e) => {
     e.preventDefault();
     const response = await fetch('auth/logout');
@@ -39,10 +39,10 @@ export default function Navbar({ user, setUser }) {
             {user && (
             <>
               <li className="nav-item">
-                <a onClick={logOut} href="/">Выход</a>
+                <a onClick={logOut} className="nav-link active" aria-current="page" href="/">Выход</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Другая кнопка</a>
+                <a className="nav-link active" aria-current="page" href="/auth/reg">Добавить пользователя</a>
               </li>
             </>
             )}

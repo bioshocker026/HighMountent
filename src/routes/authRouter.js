@@ -30,10 +30,10 @@ router.post('/reg', async (req, res) => {
       },
     });
 
-    if (!isCreated) return res.status(400).json({ message: 'Пользователь с таким именем уже зарегестрирован' });
-
+    if (!isCreated) return res.sendStatus(400).json({ message: 'Пользователь с таким именем уже зарегестрирован' });
+    return res.sendStatus(200);
     // создаем сессию с нашим currUser и отправляем его на фронт
-    req.session.user = { id: user.id, username: user.username };
+    // req.session.user = { id: user.id, username: user.username };
   } catch (err) { // если ошибка выводим ее в консоль
     console.log(err);
   }
@@ -70,8 +70,8 @@ router.post('/login', async (req, res) => {
 router.get('/logout', async (req, res) => {
   res.clearCookie('user_sid'); // Удалить куку
   req.session.destroy(); // Завершить сессию
-  // res.sendStatus(200);
-  res.redirect('/');
+  res.sendStatus(200);
+  // res.redirect('/');
 });
 
 export default router;
