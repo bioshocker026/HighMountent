@@ -3,13 +3,8 @@ import morgan from 'morgan';
 import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
-<<<<<<< HEAD
-
-import { User } from '../db/models';
-=======
 import dotenv from 'dotenv';
 import { User, CheckBox } from '../db/models';
->>>>>>> master
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
 import authRouter from './routes/authRouter';
@@ -86,7 +81,7 @@ app.post('/checkbox', async (req, res) => {
   const chek = await CheckBox.create(req.body);
   await chek.save();
   console.log(chek, 'CCHHHEECK');
-  res.status(200);
+  // res.status(200);
   res.json(chek);
 });
 
