@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Checkbox() {
   const [data, setData] = useState({
@@ -72,7 +72,6 @@ export default function Checkbox() {
             Ты отправил(-а) офис-менеджеру на почту список необходимой для тебя канцелярии
           </label>
         </div>
-
         <div>
           Важно познакомиться с коллегами:
         </div>
@@ -96,17 +95,17 @@ export default function Checkbox() {
           </label>
         </div>
 
-        <div className="form-check">
-          <label className="form-check-label" htmlFor="flexCheckDefault">
-            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-          </label>
-        </div>
-        <div className="input-group flex-nowrap">
-          <span className="input-group-text" id="addon-wrapping">
-            Напиши имена трех твоих коллег по отделу:
-            <input type="text" className="form-control" placeholder="Names" aria-label="Username" aria-describedby="addon-wrapping" />
-          </span>
-        </div>
+      <div className="form-check">
+        <label className="form-check-label" htmlFor="flexCheckDefault">
+          <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+        </label>
+      </div>
+      <div className="input-group flex-nowrap">
+        <span className="input-group-text" id="addon-wrapping">
+          Напиши имена трех твоих коллег по отделу:
+          <input type="text" className="form-control" placeholder="Names" aria-label="Username" aria-describedby="addon-wrapping" />
+        </span>
+      </div>
 
         <div>Важно пройти оформление в отделе кадров:</div>
 
