@@ -15,7 +15,7 @@ router.get('/users', async (req, res) => {
   res.render('Layout', initState);
 });
 
-router.get('/checkbox', async (req, res) => {
+router.get('/allCards', async (req, res) => {
   const checkboxes = await CheckBox.findAll();
   const initState = { checkboxes };
   res.render('Layout', initState);
