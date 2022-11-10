@@ -3,12 +3,12 @@ import morgan from 'morgan';
 import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
-import dotenv from 'dotenv';
+
 import { User } from '../db/models';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
 import authRouter from './routes/authRouter';
-// import apiRouter from './routes/apiRouter';
+import checkRouter from './routes/checkRouter';
 
 require('dotenv').config();
 
@@ -46,7 +46,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-// app.use('/api/v1', apiRouter);
+app.use('/checkbox', checkRouter);
 
 app.delete('/delete', async (req, res) => {
   const { id } = req.body;
