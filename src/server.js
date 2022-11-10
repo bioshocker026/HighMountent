@@ -81,7 +81,7 @@ app.post('/checkbox', async (req, res) => {
   const chek = await CheckBox.create(req.body);
   await chek.save();
   console.log(chek, 'CCHHHEECK');
-  res.status(200);
+  // res.status(200);
   res.json(chek);
 });
 
