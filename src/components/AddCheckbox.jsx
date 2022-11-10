@@ -13,7 +13,8 @@ export default function AddCheckbox({ user }) {
     }));
   };
   // console.log(data, 'data');
-  const submitHandler = async () => {
+  const submitHandler = async (e) => {
+    e.preventDefault();
     const response = await fetch('/checkbox', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

@@ -85,12 +85,8 @@ app.post('/save', async (req, res) => {
 });
 
 app.post('/checkbox', async (req, res) => {
-  // console.log(req.body);
   const chek = await CheckBox.create(req.body);
-  await chek.save();
-  console.log(chek, 'CCHHHEECK');
-  // res.status(200);
-  res.json(chek);
+  res.send(chek);
 });
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
