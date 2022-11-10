@@ -34,13 +34,16 @@ export default function Navbar({ user, setUser }) {
             {user?.isAdmin ? (
               <>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/checkbox">Все листки адаптации</a>
+                  <a className="nav-link active" aria-current="page" href="/allcards">Все листки адаптации</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="/users">Все пользователи</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="/auth/reg">Добавить пользователя</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="/newcheckbox">Добавить лист адаптации</a>
                 </li>
                 <li className="nav-item">
                   <a onClick={logOut} className="nav-link active" aria-current="page" href="/">Выход</a>
@@ -50,7 +53,7 @@ export default function Navbar({ user, setUser }) {
               : user && (
                 <>
                   <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/checkbox">Все листки адаптации</a>
+                    <a className="nav-link active" aria-current="page" href="/allcards">Все листки адаптации</a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link active" aria-current="page" href="/auth/reg">Добавить пользователя</a>

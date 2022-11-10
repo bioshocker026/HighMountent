@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Reg from './Reg';
 import Login from './Login';
 import MainPage from './MainPage';
-import Checkbox from './Checkbox';
+import AllCards from './AllCards';
 import AllUsers from './AllUsers';
 
 export default function App({ user, allUsers, checkboxes }) {
@@ -19,7 +19,7 @@ export default function App({ user, allUsers, checkboxes }) {
         <Route path="/" element={<MainPage />} />
         <Route path="/auth/reg" element={<Reg setUser={setCurrentUser} />} />
         <Route path="/auth/login" element={<Login setUser={setCurrentUser} />} />
-        <Route path="/checkbox" element={<Checkbox checkboxes={checkboxes} />} />
+        <Route path="/allcards" element={<AllCards checkboxes={checkboxes} />} />
         <Route path="/users" element={<AllUsers allUsers={allUs} />} />
       </Routes>
     </div>
