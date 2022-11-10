@@ -46,7 +46,6 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-// app.use('/api/v1', apiRouter);
 
 app.delete('/delete', async (req, res) => {
   const { id } = req.body;
@@ -71,7 +70,7 @@ app.post('/save', async (req, res) => {
   const { id } = req.body.oneUser;
   const { value } = req.body;
   const thisUser = await User.findByPk(id);
-  thisUser.oneUser = value;
+  thisUser.username = value; // изменяемый атрибут в таблице Users
   await thisUser.save();
   res.json('OK');
 });

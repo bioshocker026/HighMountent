@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack -wd eval-source-map",
     "dev": "babel-node src/server.js",
-    "start": "webpack -wd eval-source-map && babel-node src/server.js"
+    "start": "webpack -d eval-source-map && babel-node src/server.js"
   },
   "repository": {
     "type": "git",

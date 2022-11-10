@@ -9,6 +9,7 @@ import AllUsers from './AllUsers';
 import AddCheckbox from './AddCheckbox';
 
 export default function App({ user, allUsers, checkboxes }) {
+  // console.log(user);
   const [currentUser, setCurrentUser] = useState(user || null);
   const [allUs, setAllUs] = useState(allUsers || null);
   // console.log(allUsers);

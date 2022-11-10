@@ -8,7 +8,9 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/users', async (req, res) => {
-  const allUsers = await User.findAll();
+  const allUsers = await User.findAll({
+    order: [['createdAt', 'ASC']],
+  });
   const initState = { allUsers };
   res.render('Layout', initState);
 });
