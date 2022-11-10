@@ -6,6 +6,7 @@ import Login from './Login';
 import MainPage from './MainPage';
 import AllCards from './AllCards';
 import AllUsers from './AllUsers';
+import AddCheckbox from './AddCheckbox';
 
 export default function App({ user, allUsers, checkboxes }) {
   // console.log(user);
@@ -21,6 +22,7 @@ export default function App({ user, allUsers, checkboxes }) {
         <Route path="/auth/login" element={<Login setUser={setCurrentUser} />} />
         <Route path="/allcards" element={<AllCards checkboxes={checkboxes} />} />
         <Route path="/users" element={<AllUsers allUsers={allUs} />} />
+        <Route path="/newcheckbox" element={<AddCheckbox user={currentUser} />} />
       </Routes>
     </div>
   );
