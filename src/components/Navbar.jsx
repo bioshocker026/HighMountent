@@ -4,7 +4,7 @@ export default function Navbar({ user, setUser }) {
   // console.log(user.isAdmin);
   const logOut = async (e) => {
     e.preventDefault();
-    const response = await fetch('auth/logout');
+    const response = await fetch('/auth/logout');
     if (response.ok) {
       window.location.href = '/';
       // navigate('/');
