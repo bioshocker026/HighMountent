@@ -4,7 +4,7 @@ import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
 import dotenv from 'dotenv';
-import { User } from '../db/models';
+import { User, CheckBox } from '../db/models';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
 import authRouter from './routes/authRouter';
@@ -73,6 +73,15 @@ app.post('/save', async (req, res) => {
   thisUser.username = value; // изменяемый атрибут в таблице Users
   await thisUser.save();
   res.json('OK');
+});
+
+app.post('/checkbox', async (req, res) => {
+  // console.log(req.body);
+  const chek = await CheckBox.create(req.body);
+  await chek.save();
+  console.log(chek, 'CCHHHEECK');
+  res.status(200);
+  res.json(chek);
 });
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
