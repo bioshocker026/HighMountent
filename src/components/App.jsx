@@ -4,9 +4,14 @@ import Navbar from './Navbar';
 import Reg from './Reg';
 import Login from './Login';
 import MainPage from './MainPage';
+<<<<<<< HEAD
+import Checkbox from './Checkbox';
+import AllUsers from './AllUsers';
+=======
 import AllCards from './AllCards';
 import AllUsers from './AllUsers';
 import AddCheckbox from './AddCheckbox';
+>>>>>>> master
 
 export default function App({ user, allUsers, checkboxes }) {
   // console.log(user);
