@@ -4,8 +4,9 @@ import Navbar from './Navbar';
 import Reg from './Reg';
 import Login from './Login';
 import MainPage from './MainPage';
+import Checkbox from './Checkbox';
 
-export default function App({ user, allUsers }) {
+export default function App({ user, allUsers, checkboxes }) {
   const [currentUser, setCurrentUser] = useState(user || null);
   return (
     <div className="profilecont">
@@ -14,6 +15,7 @@ export default function App({ user, allUsers }) {
         <Route path="/" element={<MainPage />} />
         <Route path="/auth/reg" element={<Reg setUser={setCurrentUser} />} />
         <Route path="/auth/login" element={<Login setUser={setCurrentUser} />} />
+        <Route path="/checkbox" element={<Checkbox checkboxes={checkboxes} />} />
       </Routes>
     </div>
   );
