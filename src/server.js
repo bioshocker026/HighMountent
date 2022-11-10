@@ -4,6 +4,7 @@ import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
 import dotenv from 'dotenv';
+import { User } from '../db/models';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
 import authRouter from './routes/authRouter';
@@ -46,5 +47,33 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 // app.use('/api/v1', apiRouter);
+
+app.delete('/delete', async (req, res) => {
+  const { id } = req.body;
+  // console.log('text--->', req.body);
+  const deletedPost = await User.findByPk(id);
+  await deletedPost.destroy();
+  res.json('OK');
+});
+
+app.post('/change', async (req, res) => {
+  const thisUserIsAdmin = await User.findByPk(req.body.id);
+  if (thisUserIsAdmin.isAdmin) {
+    await thisUserIsAdmin.update({ isAdmin: false });
+    res.json(false);
+  } else {
+    await thisUserIsAdmin.update({ isAdmin: true });
+    res.json(true);
+  }
+});
+
+app.post('/save', async (req, res) => {
+  const { id } = req.body.oneUser;
+  const { value } = req.body;
+  const thisUser = await User.findByPk(id);
+  thisUser.oneUser = value;
+  await thisUser.save();
+  res.json('OK');
+});
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

@@ -4,9 +4,12 @@ import Navbar from './Navbar';
 import Reg from './Reg';
 import Login from './Login';
 import MainPage from './MainPage';
+import AllUsers from './AllUsers';
 
 export default function App({ user, allUsers }) {
   const [currentUser, setCurrentUser] = useState(user || null);
+  const [allUs, setAllUs] = useState(allUsers || null);
+  // console.log(allUsers);
   return (
     <div className="profilecont">
       <Navbar user={currentUser} setUser={setCurrentUser} />
@@ -14,6 +17,7 @@ export default function App({ user, allUsers }) {
         <Route path="/" element={<MainPage />} />
         <Route path="/auth/reg" element={<Reg setUser={setCurrentUser} />} />
         <Route path="/auth/login" element={<Login setUser={setCurrentUser} />} />
+        <Route path="/users" element={<AllUsers allUsers={allUs} />} />
       </Routes>
     </div>
   );
