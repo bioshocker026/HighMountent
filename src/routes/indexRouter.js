@@ -19,4 +19,8 @@ router.get('/checkbox', async (req, res) => {
   res.render('Layout', initState);
 });
 
+router.get('/newcheckbox', async (req, res) => {
+  res.render('Layout');
+});
+
 export default router;

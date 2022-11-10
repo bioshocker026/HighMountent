@@ -6,6 +6,7 @@ import Login from './Login';
 import MainPage from './MainPage';
 import Checkbox from './Checkbox';
 import AllUsers from './AllUsers';
+import AddCheckbox from './AddCheckbox';
 
 export default function App({ user, allUsers, checkboxes }) {
   const [currentUser, setCurrentUser] = useState(user || null);
@@ -20,6 +21,7 @@ export default function App({ user, allUsers, checkboxes }) {
         <Route path="/auth/login" element={<Login setUser={setCurrentUser} />} />
         <Route path="/checkbox" element={<Checkbox checkboxes={checkboxes} />} />
         <Route path="/users" element={<AllUsers allUsers={allUs} />} />
+        <Route path="/newcheckbox" element={<AddCheckbox user={currentUser} />} />
       </Routes>
     </div>
   );
