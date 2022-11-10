@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function reg({ setUser }) {
+export default function Reg({ setUser }) {
   const [error, setError] = useState(null);
   const [inputs, setInputs] = useState({
     username: '',
