@@ -3,8 +3,13 @@ import morgan from 'morgan';
 import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
+<<<<<<< HEAD
 
 import { User } from '../db/models';
+=======
+import dotenv from 'dotenv';
+import { User, CheckBox } from '../db/models';
+>>>>>>> master
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
 import authRouter from './routes/authRouter';
@@ -71,9 +76,18 @@ app.post('/save', async (req, res) => {
   const { id } = req.body.oneUser;
   const { value } = req.body;
   const thisUser = await User.findByPk(id);
-  thisUser.oneUser = value;
+  thisUser.username = value; // изменяемый атрибут в таблице Users
   await thisUser.save();
   res.json('OK');
+});
+
+app.post('/checkbox', async (req, res) => {
+  // console.log(req.body);
+  const chek = await CheckBox.create(req.body);
+  await chek.save();
+  console.log(chek, 'CCHHHEECK');
+  res.status(200);
+  res.json(chek);
 });
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

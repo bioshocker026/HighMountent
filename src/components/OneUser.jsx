@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 export default function OneUser({ oneUser, onDelete }) {
   const [userStatus, setUserStatus] = useState(oneUser.isAdmin);
   const [showInput, setShowInput] = useState(false);
-  const [value, setValue] = useState(oneUser);
-  const [text, setText] = useState(oneUser);
+  const [value, setValue] = useState(oneUser.username);
+  const [text, setText] = useState(oneUser.username);
   //   console.log(oneUser);
 
   const changeStatus = () => {
@@ -17,24 +17,24 @@ export default function OneUser({ oneUser, onDelete }) {
     });
   };
 
-//   useEffect(() => {
-//     fetch('/change', {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/json' },
-//       body: JSON.stringify(oneUser),
-//     }).then((response) => response.json())
-//       .then((data) => {
-//         setUserStatus(data);
-//       });
-//   }, []);
+  //   useEffect(() => {
+  //     fetch('/change', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify(oneUser),
+  //     }).then((response) => response.json())
+  //       .then((data) => {
+  //         setUserStatus(data);
+  //       });
+  //   }, []);
 
   function deleteHandler() {
     onDelete(oneUser.id);
   }
 
-  //   function changeHandler(e) {
-  //     setValue(e.target.value);
-  //   }
+  function changeHandler(e) {
+    setValue(e.target.value);
+  }
 
   const saveHandler = async () => {
     const respose = await fetch('/save', {
@@ -43,9 +43,11 @@ export default function OneUser({ oneUser, onDelete }) {
       body: JSON.stringify({ oneUser, value }),
     });
     const status = await respose.json();
+    console.log(status);
     if (status === 'OK') {
-      setText(value);
+      setText(status);
       setShowInput(false);
+      window.location.href = '/users';
     }
   };
 

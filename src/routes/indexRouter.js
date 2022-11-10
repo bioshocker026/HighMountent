@@ -8,15 +8,21 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/users', async (req, res) => {
-  const allUsers = await User.findAll();
+  const allUsers = await User.findAll({
+    order: [['createdAt', 'ASC']],
+  });
   const initState = { allUsers };
   res.render('Layout', initState);
 });
 
-router.get('/checkbox', async (req, res) => {
+router.get('/allCards', async (req, res) => {
   const checkboxes = await CheckBox.findAll();
   const initState = { checkboxes };
   res.render('Layout', initState);
+});
+
+router.get('/newcheckbox', async (req, res) => {
+  res.render('Layout');
 });
 
 export default router;
