@@ -56,6 +56,14 @@ app.delete('/delete', async (req, res) => {
   res.json('OK');
 });
 
+app.delete('/deleteCard', async (req, res) => {
+  const { id } = req.body;
+  // console.log('text--->', req.body);
+  const deletedPost = await CheckBox.findByPk(id);
+  await deletedPost.destroy();
+  res.json('OK');
+});
+
 app.post('/change', async (req, res) => {
   const thisUserIsAdmin = await User.findByPk(req.body.id);
   if (thisUserIsAdmin.isAdmin) {

@@ -1,6 +1,9 @@
 import React from 'react';
 
-export default function OneCard({ oneCard }) {
+export default function OneCard({ oneCard, onDelete }) {
+  function deleteHandler() {
+    onDelete(oneCard.id);
+  }
   return (
     <div className="card" style={{ width: '18rem', margin: '1rem' }}>
       <div className="card-body ">
@@ -15,6 +18,7 @@ export default function OneCard({ oneCard }) {
         <a href="#" className="card-link">
           Ссылка на сам лист адаптации
         </a>
+        <button onClick={deleteHandler} type="button" className="btn btn-danger btn-sm">X</button>
       </div>
     </div>
   );
