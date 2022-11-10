@@ -34,6 +34,9 @@ export default function Navbar({ user, setUser }) {
             {user && (
             <>
               <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/checkbox">Все листки адаптации</a>
+              </li>
+              <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="/users">Все пользователи</a>
               </li>
               <li className="nav-item">
