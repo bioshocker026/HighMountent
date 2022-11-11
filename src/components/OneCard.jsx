@@ -12,10 +12,10 @@ export default function OneCard({ oneCard, onDelete }) {
         <h5 className="card-title">Имя ментора</h5>
         <h6 className="card-subtitle mb-2 text-muted">{oneCard.mentor}</h6>
         <div className="progress" style={{ margin: '0 0 0.5rem 0' }}>
-          <div className="progress-bar" role="progressbar" aria-label="Basic example" style={{ width: '50%' }} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" />
+          <div className="progress-bar" role="progressbar" aria-label="Basic example" style={{ width: '50%', backgroundColor: 'green' }} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" />
         </div>
         {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-        <a href="#" className="card-link">
+        <a href={`/checkbox/${oneCard.id}`} className="card-link">
           Ссылка на сам лист адаптации
         </a>
         <button onClick={deleteHandler} type="button" className="btn btn-danger btn-sm">X</button>
