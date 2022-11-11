@@ -91,10 +91,9 @@ app.post('/checkbox', async (req, res) => {
 });
 
 app.patch('/update-checkbox/:id', async (req, res) => {
-  console.log(req.body);
   // const a = await CheckBox.findOne({ where: { id: req.params.id } });
   const chek = await CheckBox.update(req.body, { where: { id: req.params.id } });
-  console.log(chek)
+  // console.log('CHEK---->', chek);
   res.send(chek);
 });
 

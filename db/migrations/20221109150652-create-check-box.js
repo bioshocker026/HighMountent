@@ -37,11 +37,11 @@ module.exports = {
         defaultValue: false,
       },
       answer8: {
-        type: Sequelize.STRING,
-      },
-      answer9: {
         type: Sequelize.BOOLEAN,
         defaultValue: false,
+      },
+      answer9: {
+        type: Sequelize.STRING,
       },
       answer10: {
         type: Sequelize.BOOLEAN,
@@ -52,6 +52,10 @@ module.exports = {
         defaultValue: false,
       },
       answer12: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
+      answer13: {
         type: Sequelize.BOOLEAN,
         defaultValue: false,
       },
