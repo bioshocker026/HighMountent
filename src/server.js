@@ -9,6 +9,7 @@ import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
 import authRouter from './routes/authRouter';
 import checkRouter from './routes/checkRouter';
+import { where } from 'sequelize';
 
 require('dotenv').config();
 
@@ -86,6 +87,14 @@ app.post('/save', async (req, res) => {
 
 app.post('/checkbox', async (req, res) => {
   const chek = await CheckBox.create(req.body);
+  res.send(chek);
+});
+
+app.patch('/update-checkbox/:id', async (req, res) => {
+  console.log(req.body);
+  // const a = await CheckBox.findOne({ where: { id: req.params.id } });
+  const chek = await CheckBox.update(req.body, { where: { id: req.params.id } });
+  console.log(chek)
   res.send(chek);
 });
 

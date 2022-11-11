@@ -25,4 +25,10 @@ router.get('/newcheckbox', async (req, res) => {
   res.render('Layout');
 });
 
+router.get('/checkbox/:id', async (req, res) => {
+  const info = await CheckBox.findOne({ where: { id: req.params.id } });
+  const initState = { info };
+  res.render('Layout', initState);
+});
+
 export default router;
