@@ -144,7 +144,7 @@ export default function Checkbox({ info }) {
         <div className="form-check">
           <label className="form-check-label" htmlFor="flexCheckDefault">
             <input onChange={changeHandler} name="answer8" className="form-check-input" type="checkbox" checked={data.answer8} id="flexCheckDefault" />
-            Ты написал(-а) сообщение в командный чат
+            Ты проверил своё рабочее место
           </label>
         </div>
         <div className="input-group flex-nowrap">
