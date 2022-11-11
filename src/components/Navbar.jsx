@@ -59,6 +59,9 @@ export default function Navbar({ user, setUser }) {
                     <a className="nav-link active" aria-current="page" href="/auth/reg">Добавить пользователя</a>
                   </li>
                   <li className="nav-item">
+                    <a className="nav-link active" aria-current="page" href="/newcheckbox">Добавить лист адаптации</a>
+                  </li>
+                  <li className="nav-item">
                     <a onClick={logOut} className="nav-link active" aria-current="page" href="/">Выход</a>
                   </li>
                 </>
