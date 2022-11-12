@@ -55,9 +55,9 @@ export default function Navbar({ user, setUser }) {
                   <li className="nav-item">
                     <a className="nav-link active" aria-current="page" href="/allcards">Все листки адаптации</a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a className="nav-link active" aria-current="page" href="/auth/reg">Добавить пользователя</a>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <a className="nav-link active" aria-current="page" href="/newcheckbox">Добавить лист адаптации</a>
                   </li>
