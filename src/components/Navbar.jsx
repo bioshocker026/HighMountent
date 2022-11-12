@@ -1,13 +1,11 @@
 import React from 'react';
 
 export default function Navbar({ user, setUser }) {
-  // console.log(user.isAdmin);
   const logOut = async (e) => {
     e.preventDefault();
     const response = await fetch('/auth/logout');
     if (response.ok) {
       window.location.href = '/';
-      // navigate('/');
       setUser(null);
     }
   };
@@ -55,9 +53,6 @@ export default function Navbar({ user, setUser }) {
                   <li className="nav-item">
                     <a className="nav-link active" aria-current="page" href="/allcards">Все листки адаптации</a>
                   </li>
-                  {/* <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/auth/reg">Добавить пользователя</a>
-                  </li> */}
                   <li className="nav-item">
                     <a className="nav-link active" aria-current="page" href="/newcheckbox">Добавить лист адаптации</a>
                   </li>
